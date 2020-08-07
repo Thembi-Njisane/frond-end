@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* body{background-color: #f5fffa;} */
+
+/* @import 'https://fonts.googleapis.com/icon?family=Material+Icons'; */
+
+body{background-color: #fff0f5;}
+
+form div.input-field input{
+    padding-left: 15px !important;
+    color: #25a297;
+}
+
+input.ng-invalid.ng-dirty{
+    border-bottom: #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important;
+}
+
+.input-field>label{
+font-size: 1.2rem;
+font-weight: bold;
+}
+
+.btn-custom,.btn-custom:hover,.btn-custom:focus{
+    background-color: transparent;
+    font-size: 1.1rem;
+    margin: 0px 5px;
+    border: #fff solid 1px;
+    text-transform: none;
+}
+
+div.card{
+    /* background-color: #8c0073; */
+    background-color: #306754;
+    border-radius: 10px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

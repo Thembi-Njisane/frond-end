@@ -1,0 +1,79 @@
+
+ <!-- second Method using materialize css -->
+
+ <div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content white-text">
+                <div class="row">
+                    <div class="col s5">
+                        <Form ngForm #productForm="ngForm" (ngSubmit)="onSubmit(productForm)"> 
+                            <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="productService.selectedProduct._id">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="prodName" #name="ngModel" [(ngModel)]="productService.selectedProduct.prodName" placeholder="enter product name" required>
+                                    <label>Product Name: <label class="red-text">*</label>
+                                 </label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="quantity" #name="ngModel" [(ngModel)]="productService.selectedProduct.quantity" placeholder="enter product quantity">
+                                    <label>Product Quantity <label class="red-text">*</label>
+                                 </label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="price" #name="ngModel" [(ngModel)]="productService.selectedProduct.price" placeholder="enter product price">
+                                    <label>Price: <label class="red-text">*</label>
+                                 </label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn btn-custom right" type="button" (click)="resetForm(productForm)">Reset</button>
+                                    <button class="btn btn-custom right" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </Form>
+                    </div>
+
+
+                    <div class="col s7">
+                        <table class="responsive-table highlight" >
+                            <thead>
+                                <tr>
+                                    <th> Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tr *ngFor="let prod of productService.products">
+                                <td>{{prod.prodName}}</td>
+                                <td>{{prod.quantity}}</td>
+                                <td>{{prod.price}}</td>
+                                <td>
+                                    <a class="action-btn" (click)="onEdit(prod)">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+
+                                    <a class="action-btn" (click)="onDelete(prod._id,productForm)" >
+                                        <i class="material-icons">delete</i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
